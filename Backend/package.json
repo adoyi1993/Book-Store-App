@@ -1,0 +1,22 @@
+{
+  "name": "bookapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "book-store": "npm start --prefix book-store",
+    "server": "nodemon app.js",
+    "dev": "concurrently \"npm run server\"\"npm run book-store\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix book-store && npm run build --prefix book-store"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.4",
+    "nodemon": "^2.0.19"
+  }
+}
